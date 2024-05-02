@@ -1,48 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css2?family=MonoLisa&display=swap" rel="stylesheet">
-    <link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRekOY_y3jsSE5eiD-2AmYMWdEnX5YpTUJRdpIYEa35ug&s" rel="icon">
-    <title>GYM</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: black;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            font-family: 'MonoLisa', monospace;
-        }
-        @font-face {
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link href="https://fonts.googleapis.com/css2?family=MonoLisa&display=swap" rel="stylesheet">
+<link href="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRekOY_y3jsSE5eiD-2AmYMWdEnX5YpTUJRdpIYEa35ug&s" rel="icon">
+<title>GYM</title>
+<style>
+    body, html {
+        height: 100%;
+        margin: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-family: 'MonoLisa', monospace;
+        background-color: black
+    }
+    @font-face {
     font-family: 'Noto Nastaliq Urdu';
     src: url('https://fonts.gstatic.com/ea/notonastaliqurdu/v4/NotoNastaliqUrdu-Regular.woff2') format('woff2'),
          url('https://fonts.gstatic.com/ea/notonastaliqurdu/v4/NotoNastaliqUrdu-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
 }
-        button {
-            padding: 15px 30px;
-            font-size: 18px;
-            background-color:greenyellow;
-            color: black;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            margin: 10px;
-            font-family: 'MonoLisa', monospace;
-        }
-   
-    </style>
+    .button-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .button {
+        margin: 5px;
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: greenyellow;
+        color: black;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+</style>
 </head>
 <body>
-    <a href="workout.html"> <button>Workout</button> </a>
-    <br>
-   <a href="tirelist.html"> <button>Tire List</button> </a>
-    <br>
-    <a href="https://abs-workout.vercel.app"> <button>Abs Workout</button> </a>
+
+<div class="button-container">
+   <a href="workout.html"> <button class="button">Workout</button> </a>
+   <a href="tirelist.html"> <button class="button">Tire List</button> </a>
+   <a href="https://abs-workout.netlify.app"> <button class="button">Abs Workout</button> </a>
+</div>
+
 </body>
 </html>
