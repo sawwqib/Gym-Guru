@@ -11,10 +11,8 @@
         height: 100%;
         margin: 0;
         display: flex;
-        justify-content: center;
-        align-items: center;
+        flex-direction: column;
         font-family: 'MonoLisa', monospace;
-        background-color: black
     }
     @font-face {
     font-family: 'Noto Nastaliq Urdu';
@@ -23,10 +21,18 @@
     font-weight: normal;
     font-style: normal;
 }
+    header, footer {
+        background-color: black;
+        color: greenyellow;
+        padding: 1px 0;
+        text-align: center;
+    }
     .button-container {
+        flex: 1;
         display: flex;
         flex-direction: column;
         align-items: center;
+        justify-content: center;
     }
     .button {
         margin: 5px;
@@ -38,17 +44,96 @@
         border-radius: 5px;
         cursor: pointer;
         font-family: 'MonoLisa', monospace;
+        background-image: url('button-icon.png'); /* Replace 'button-icon.png' with your image path */
+        background-repeat: no-repeat;
+        background-size: 20px; /* Adjust size as needed */
+        background-position: 10px center; /* Adjust position as needed */
+        padding-left: 40px; /* Adjust based on icon size */
     }
+    .bottom-left-image {
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        margin: 55px; /* Adjust margin as needed */
+        width: 50px; /* Adjust width as needed */
+        height: auto; /* Maintain aspect ratio */
+    }
+    .background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: black;
+}
+
+.background::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: repeating-linear-gradient(transparent, transparent 1px, green 1px, green 2px);
+  animation: lines 5s linear infinite;
+}
+
+.background::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: url('https://cdn.pixabay.com/photo/2017/03/25/17/55/colorful-2174045_960_720.png') center/cover no-repeat;
+  opacity: 0.5;
+  z-index: -1;
+  animation: particles 10s linear infinite;
+}
+
+@keyframes lines {
+  0% {
+    background-position: 0 0;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+
+@keyframes particles {
+  0% {
+    transform: translate(0, -50%);
+  }
+  100% {
+    transform: translate(0, 50%);
+  }
+}
+.button img {
+  width: 20px; /* Adjust size as needed */
+  height: auto;
+  margin-right: 10px; /* Adjust spacing between image and text */
+}
 </style>
 </head>
 <body>
 
+<header>
+    <h1>Gym Guru</h1>
+</header>
+<div class="background"></div>
 <div class="button-container">
-   <a href="workout.html"> <button class="button">Workout</button> </a>
-   <a href="tirelist.html"> <button class="button">Tire List</button> </a>
-   <a href="https://abs-workout.vercel.app"> <button class="button">Abs Workout</button> </a>
-    <a href="https://ultimateworkout.netlify.app"> <button class="button">Ultimate Workout</button> </a>
+   <a href="workout.html"> <button class="button">Workout&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ2KeGae5NBzaygWJKWM5pz-VCfF9woTT3z0iQuClgl1xBuKqiu6xxQCnuteUSa_Tk5wyE&usqp=CAU" alt="img"></button> </a>
+   <a href="tirelist.html"> <button class="button">Tire List&nbsp;<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRIqPtBaXkN3z2rnq8GZEPklnACWGMPgQDe05ZgP0OrGw&s" alt="img"></button> </a>
+   <a href="https://abs-workout.vercel.app"> <button class="button">Abs Workout&nbsp;<img src="https://i.pinimg.com/originals/9b/43/4b/9b434b752e783efbb809b2a65fcdfe9a.png" alt="img"></button> </a>
+    <a href="https://ultimateworkout.netlify.app"> <button class="button">Ultimate Workout&nbsp;<img src="https://media.tenor.com/1OrBi43clj4AAAAd/troll-face-troll.gif" alt="img"></button> </a>
 </div>
+<a href="https://wa.me/+916005224748">
+<img class="bottom-left-image" src="https://i.imgur.com/soWjldY.gif" alt="Bottom Left Image"></a>
+
+<footer>
+    <p>Created By SAQIB</p>
+</footer>
 
 </body>
 </html>
